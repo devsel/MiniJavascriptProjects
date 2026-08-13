@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Virtual Pet</title>
+</head>
+
+<body>
+
+    <h1>🐶 My Virtual Pet</h1>
+
+    <div id="pet">🐶</div>
+
+    <h2>Happiness: <span id="happiness">50</span></h2>
+
+    <button onclick="feedPet()">🍎 Feed</button>
+    <button onclick="playPet()">🎾 Play</button>
+    <button onclick="sleepPet()">😴 Sleep</button>
+
+    <script>
+        let happiness = 50;
+
+        function feedPet() {
+            happiness += 10;
+            updatePet();
+        }
+
+        function playPet() {
+            happiness += 5;
+            updatePet();
+        }
+
+        function sleepPet() {
+            happiness += 3;
+            updatePet();
+        }
+
+        function updatePet() {
+            document.getElementById("happiness").textContent = happiness;
+
+            if (happiness >= 80) {
+                document.getElementById("pet").textContent = "😄🐶";
+            } else if (happiness >= 50) {
+                document.getElementById("pet").textContent = "😊🐶";
+            } else {
+                document.getElementById("pet").textContent = "😢🐶";
+            }
+        }
+    </script>
+
+</body>
+</html>
